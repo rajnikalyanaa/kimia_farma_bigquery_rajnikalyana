@@ -13,7 +13,7 @@ SELECT
   t.price AS actual_price,
   t.discount_percentage,
 
-  -- Menghitung gross laba
+  -- Calculate gross profit
   CASE
     WHEN t.price <= 50000 THEN 0.10
     WHEN t.price > 50000 AND t.price <= 100000 THEN 0.15
@@ -22,10 +22,10 @@ SELECT
     ELSE 0.30
   END AS persentase_gross_laba,
 
-  -- Menghitung harga setelah diskon
+  -- Calculate price after discount
   t.price * (1 - t.discount_percentage / 100.0) AS nett_sales,
 
-  -- Menghitung profit bersih
+  -- Calculate nett profit
   (t.price * (1 - t.discount_percentage / 100.0)) *
     CASE
       WHEN t.price <= 50000 THEN 0.10
@@ -37,7 +37,7 @@ SELECT
 
   t.rating AS rating_transaksi
 
--- Menggabungkan keempat tabel
+-- Combine all tables
 FROM
   `rakamin-kf-analytics-463306.kimia_farma.kf_final_transaction` AS t
 JOIN
