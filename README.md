@@ -1,4 +1,4 @@
-# kimia_farma_bigquery_rajnikalyana
+# Virtual Internship Kimia Farma - Big Data Analytics
 This repository contains SQL queries for Kimia Farma analytics project using Google BigQuery and data visualization using Looker Studio.
 
 # About Company
